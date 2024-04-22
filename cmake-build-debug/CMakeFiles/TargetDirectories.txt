@@ -1,3 +1,8 @@
 D:/Javaproject/relisStructure/cmake-build-debug/CMakeFiles/relisStructure.dir
 D:/Javaproject/relisStructure/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/Javaproject/relisStructure/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Javaproject/relisStructure/cmake-build-debug/libs/CMakeFiles/edit_cache.dir
+D:/Javaproject/relisStructure/cmake-build-debug/libs/CMakeFiles/rebuild_cache.dir
+D:/Javaproject/relisStructure/cmake-build-debug/libs/dataStructure/CMakeFiles/dataStructure.dir
+D:/Javaproject/relisStructure/cmake-build-debug/libs/dataStructure/CMakeFiles/edit_cache.dir
+D:/Javaproject/relisStructure/cmake-build-debug/libs/dataStructure/CMakeFiles/rebuild_cache.dir

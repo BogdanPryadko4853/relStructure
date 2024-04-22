@@ -1,11 +1,9 @@
 {
+	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "relisStructure.exe"
-		},
-		{
-			"path" : "relisStructure.pdb"
+			"path" : "libs/dataStructure/libdataStructure.a"
 		}
 	],
 	"backtrace" : 1,
@@ -13,11 +11,11 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_library"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"libs/dataStructure/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -27,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 1,
 				"parent" : 0
 			}
 		]
@@ -56,32 +54,13 @@
 			]
 		}
 	],
-	"id" : "relisStructure::@6890427a1f51a3e7e1df",
-	"link" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
-			}
-		],
-		"language" : "C"
-	},
-	"name" : "relisStructure",
-	"nameOnDisk" : "relisStructure.exe",
+	"id" : "dataStructure::@44e76b0b75ac80dc7f57",
+	"name" : "dataStructure",
+	"nameOnDisk" : "libdataStructure.a",
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "libs/dataStructure",
+		"source" : "libs/dataStructure"
 	},
 	"sourceGroups" : 
 	[
@@ -91,6 +70,13 @@
 			[
 				0
 			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
 		}
 	],
 	"sources" : 
@@ -98,9 +84,14 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.c",
+			"path" : "libs/dataStructure/Hash/HashTable.c",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "libs/dataStructure/Hash/HashTable.h",
+			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "STATIC_LIBRARY"
 }

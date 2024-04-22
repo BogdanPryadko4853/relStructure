@@ -1,0 +1,104 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "libs",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-libs-Debug-dd7a5ca29a7a50124f40.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "libs"
+				},
+				{
+					"build" : "libs/dataStructure",
+					"jsonFile" : "directory-libs.dataStructure-Debug-a0cef1f583fb12a09823.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "libs/dataStructure",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "relisStructure",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "dataStructure::@44e76b0b75ac80dc7f57",
+					"jsonFile" : "target-dataStructure-Debug-8e37d2c3207c067a3d53.json",
+					"name" : "dataStructure",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "relisStructure::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-relisStructure-Debug-15eff738061080ef46b2.json",
+					"name" : "relisStructure",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Javaproject/relisStructure/cmake-build-debug",
+		"source" : "D:/Javaproject/relisStructure"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
