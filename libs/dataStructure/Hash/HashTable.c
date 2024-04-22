@@ -10,7 +10,7 @@ void addValueInTable(HashTable **table, int value) {
     int index = key % INITIAL_CAPACITY; // Получаем индекс списка
 
     // Создаем новый элемент
-    HashTable *newElement = (HashTable *)malloc(sizeof(HashTable));
+    HashTable *newElement = (HashTable *) malloc(sizeof(HashTable));
     newElement->val = value;
     newElement->key = key;
     newElement->next = NULL;
@@ -40,7 +40,7 @@ bool getValueByKey(HashTable **table, int key) {
     return ret;
 }
 
-bool containsInTable(HashTable **table, int value){
+bool containsInTable(HashTable **table, int value) {
     int key = hashKey(value);
     int index = key % INITIAL_CAPACITY;
     HashTable *current = table[index];
@@ -73,7 +73,7 @@ void removeValueByKey(HashTable **table, int key) {
     }
 }
 
-void removeValue(HashTable **table, int value){
+void removeValue(HashTable **table, int value) {
     int key = hashKey(value);
     int index = hashKey(key) % INITIAL_CAPACITY;
     HashTable *current = table[index];
@@ -93,7 +93,7 @@ void removeValue(HashTable **table, int value){
     }
 }
 
-size_t getSize(HashTable **table){
+size_t getSize(HashTable **table) {
     size_t count = 0;
 
     for (int i = 0; i < INITIAL_CAPACITY; i++) {
@@ -106,6 +106,64 @@ size_t getSize(HashTable **table){
 
     return count;
 }
-int hashKey(int val){
-    return val%10;
+
+int hashKey(int val) {
+    return val % 10;
+}
+
+bool isEmpty(HashTable **table) {
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        HashTable *current = table[i];
+        if (current != NULL) {
+            return false; // Если хотя бы один элемент в ячейке не пуст, таблица не пуста
+        }
+    }
+    return true; // Если все ячейки пусты, таблица пуста
+}
+
+int *getKeys(HashTable **table) {
+    size_t count = 10;
+    int *res = (int *) malloc(count * sizeof(int));
+    size_t k = 0;
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        HashTable *current = table[i];
+        while (current != NULL) {
+            res[k] = current->key;
+            k++;
+            if (k >= count) {
+                count += 10;
+                res = (int *) realloc(res, count * sizeof(int));
+            }
+            current = current->next;
+        }
+    }
+
+    for (int i = 0; i < k; ++i) {
+        printf("%d ", res[i]);
+    }
+
+    return res;
+}
+
+int *getValues(HashTable **table) {
+    size_t count = 10;
+    int *res = (int *) malloc(count * sizeof(int));
+    size_t k = 0;
+
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        HashTable *current = table[i];
+        while (current != NULL) {
+            res[k] = current->val;
+            k++;
+            if (k >= count) {
+                count += 10;
+                res = (int *) realloc(res, count * sizeof(int));
+            }
+            current = current->next;
+        }
+    }
+    for (int i = 0; i < k; ++i) {
+        printf("%d ", res[i]);
+    }
+    return res;
 }

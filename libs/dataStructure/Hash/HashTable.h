@@ -11,11 +11,11 @@
 #include "malloc.h"
 
 //структура хеш таблицы
-typedef struct hashTable{
+typedef struct hashTable {
     int val;
     int key;
     struct hashTable *next;
-}HashTable;
+} HashTable;
 
 //добавление нового значения в таблицу
 void addValueInTable(HashTable **table, int value);
@@ -38,6 +38,15 @@ void removeValue(HashTable **table, int value);
 
 //получение размера таблицы
 size_t getSize(HashTable **table);
+
+//проверка пуста ли таблица
+bool isEmpty(HashTable **table);
+
+//получение ключей таблицы
+int* getKeys(HashTable **table);
+
+//получение значений таблицы
+int* getValues(HashTable **table) ;
 
 
 #endif //RELISSTRUCTURE_HASHTABLE_H

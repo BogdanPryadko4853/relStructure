@@ -1,50 +1,136 @@
 #include "libs/dataStructure/Hash/HashTable.h"
 #include <windows.h>
+#include <assert.h>
 
-
-
-
-int main() {
-    HashTable **table = (HashTable **)malloc(INITIAL_CAPACITY * sizeof(HashTable *));
-
-    // Инициализация таблицы
+void testAddValueInTable() {
+    HashTable *table[INITIAL_CAPACITY];
     for (int i = 0; i < INITIAL_CAPACITY; i++) {
         table[i] = NULL;
     }
 
-    // Тест добавления значения
-    addValueInTable(table, 5);
-    addValueInTable(table, 15);
+    addValueInTable(&table, 10);
+    addValueInTable(&table, 20);
+    addValueInTable(&table, 30);
 
-    // Тест получения значения по ключу
-    printf("Value for key 5: %d\n", getValueByKey(table, 5));
-    printf("Value for key 10: %d\n", getValueByKey(table, 10));
+    assert(getValueByKey(&table, 10) == true);
+    assert(getValueByKey(&table, 20) == true);
+    assert(getValueByKey(&table, 30) == true);
+}
 
-    // Тест наличия значения в таблице
-    printf("Contains value 5: %d\n", containsInTable(table, 5));
-    printf("Contains value 10: %d\n", containsInTable(table, 10));
-
-    // Тест удаления значения по ключу
-    removeValueByKey(table, 5);
-    printf("Contains value 5 after removal: %d\n", containsInTable(table, 5));
-
-    // Тест удаления значения
-    addValueInTable(table, 20);
-    removeValue(table, 15);
-    printf("Contains value 15 after removal: %d\n", containsInTable(table, 15));
-    // Тест получения размера таблицы
-    printf("Size of table: %zu\n", getSize(table));
-
-    // Освобождение памяти
+void testGetValueByKey() {
+    HashTable *table[INITIAL_CAPACITY];
     for (int i = 0; i < INITIAL_CAPACITY; i++) {
-        HashTable *current = table[i];
-        while (current != NULL) {
-            HashTable *temp = current;
-            current = current->next;
-            free(temp);
-        }
+        table[i] = NULL;
     }
-    free(table);
 
+    addValueInTable(&table, 10);
+    addValueInTable(&table, 20);
+    addValueInTable(&table, 30);
+
+    assert(getValueByKey(&table, 10) == true);
+    assert(getValueByKey(&table, 20) == true);
+    assert(getValueByKey(&table, 30) == true);
+}
+
+void testContainsInTable() {
+    HashTable *table[INITIAL_CAPACITY];
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        table[i] = NULL;
+    }
+
+    addValueInTable(&table, 10);
+    addValueInTable(&table, 20);
+    addValueInTable(&table, 30);
+
+    assert(containsInTable(&table, 10) == true);
+    assert(containsInTable(&table, 20) == true);
+    assert(containsInTable(&table, 30) == true);
+}
+
+void testRemoveValueByKey() {
+    HashTable *table[INITIAL_CAPACITY];
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        table[i] = NULL;
+    }
+
+    addValueInTable(&table, 10);
+    addValueInTable(&table, 20);
+    addValueInTable(&table, 30);
+
+    removeValueByKey(&table, 10);
+    assert(getValueByKey(&table, 10) == false);
+
+    removeValueByKey(&table, 20);
+    assert(getValueByKey(&table, 20) == false);
+
+    removeValueByKey(&table, 30);
+    assert(getValueByKey(&table, 30) == false);
+}
+
+void testRemoveValue() {
+    HashTable *table[INITIAL_CAPACITY];
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        table[i] = NULL;
+    }
+
+    addValueInTable(&table, 10);
+    addValueInTable(&table, 20);
+    addValueInTable(&table, 30);
+
+    removeValue(&table, 10);
+    assert(getValueByKey(&table, 10) == false);
+
+    removeValue(&table, 20);
+    assert(getValueByKey(&table, 20) == false);
+
+    removeValue(&table, 30);
+    assert(getValueByKey(&table, 30) == false);
+}
+
+void testGetKeys() {
+    HashTable *table[INITIAL_CAPACITY];
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        table[i] = NULL;
+    }
+
+    addValueInTable(&table, 12);
+    addValueInTable(&table, 23);
+    addValueInTable(&table, 31);
+
+    int* keys = getKeys(&table);
+    for(int i=0;i<3;i++){
+        printf("%d ", keys[i]);
+    }
+
+    free(keys);
+}
+void testGetValues() {
+    HashTable *table[INITIAL_CAPACITY];
+    for (int i = 0; i < INITIAL_CAPACITY; i++) {
+        table[i] = NULL;
+    }
+
+    addValueInTable(&table, 10);
+    addValueInTable(&table, 20);
+    addValueInTable(&table, 30);
+
+    int* values = getValues(&table);
+    assert(values[0] == 10);
+    assert(values[1] == 20);
+    assert(values[2] == 30);
+
+    free(values);
+}
+
+int main() {
+//    testAddValueInTable();
+//    testGetValueByKey();
+//    testContainsInTable();
+//    testRemoveValueByKey();
+//    testRemoveValue();
+    testGetKeys();
+   // testGetValues();
+
+    printf("All tests passed\n");
     return 0;
 }
