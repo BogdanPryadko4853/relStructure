@@ -97,13 +97,14 @@ void testGetKeys() {
     addValueInTable(&table, 23);
     addValueInTable(&table, 31);
 
-    int* keys = getKeys(&table);
-    for(int i=0;i<3;i++){
+    int *keys = getKeys(&table);
+    for (int i = 0; i < 3; i++) {
         printf("%d ", keys[i]);
     }
 
     free(keys);
 }
+
 void testGetValues() {
     HashTable *table[INITIAL_CAPACITY];
     for (int i = 0; i < INITIAL_CAPACITY; i++) {
@@ -114,7 +115,7 @@ void testGetValues() {
     addValueInTable(&table, 20);
     addValueInTable(&table, 30);
 
-    int* values = getValues(&table);
+    int *values = getValues(&table);
     assert(values[0] == 10);
     assert(values[1] == 20);
     assert(values[2] == 30);
@@ -123,13 +124,13 @@ void testGetValues() {
 }
 
 int main() {
-//    testAddValueInTable();
-//    testGetValueByKey();
-//    testContainsInTable();
-//    testRemoveValueByKey();
-//    testRemoveValue();
+    testAddValueInTable();
+    testGetValueByKey();
+    testContainsInTable();
+    testRemoveValueByKey();
+    testRemoveValue();
     testGetKeys();
-   // testGetValues();
+    testGetValues();
 
     printf("All tests passed\n");
     return 0;

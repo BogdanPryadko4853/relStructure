@@ -167,3 +167,85 @@ int *getValues(HashTable **table) {
     }
     return res;
 }
+
+void clearTable(HashTable **table){
+    HashTable *current, *next;
+    current = *table;
+
+    while(current != NULL){
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    *table = NULL;
+}
+
+int getMinValue(HashTable **table) {
+    int minValue = INT_MAX;
+    HashTable *current;
+
+    for(size_t i =0;i<INITIAL_CAPACITY;i++){
+        current = table[i];
+        while(current!=NULL){
+            if(current->val<minValue){
+                minValue=current->val;
+            }
+            current = current->next;
+        }
+    }
+    return minValue;
+}
+
+int getMaxValue(HashTable **table) {
+    int maxValue = INT_MIN;
+    HashTable *current;
+
+    for(size_t i =0;i<INITIAL_CAPACITY;i++){
+        current = table[i];
+        while(current!=NULL){
+            if(current->val>maxValue){
+                maxValue=current->val;
+            }
+            current = current->next;
+        }
+    }
+    return maxValue;
+}
+
+int getAverageValue(HashTable **table) {
+    int count = 0;
+    int sumOfAllElements = 0;
+
+    HashTable *current;
+
+    for(size_t i =0;i<INITIAL_CAPACITY;i++){
+        current = table[i];
+        while(current!=NULL){
+            sumOfAllElements+= current->val;
+            current = current->next;
+            count++;
+        }
+    }
+
+    return sumOfAllElements/count ;
+}
+
+int getModelValue(HashTable **table) {
+    int sumOfAllElements = 0;
+    int modelValue = 0;
+
+    HashTable *current;
+
+    for(size_t i =0;i<INITIAL_CAPACITY;i++){
+        current = table[i];
+        while(current!=NULL){
+            sumOfAllElements+= current->val;
+            current = current->next;
+        }
+    }
+
+    modelValue = sumOfAllElements;
+
+    return modelValue;
+}

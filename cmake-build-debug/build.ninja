@@ -150,6 +150,12 @@ build libs/dataStructure/CMakeFiles/dataStructure.dir/Hash/HashTable.c.obj: C_CO
   OBJECT_DIR = libs\dataStructure\CMakeFiles\dataStructure.dir
   OBJECT_FILE_DIR = libs\dataStructure\CMakeFiles\dataStructure.dir\Hash
 
+build libs/dataStructure/CMakeFiles/dataStructure.dir/List/ArrayList.c.obj: C_COMPILER__dataStructure_unscanned_Debug D$:/Javaproject/relisStructure/libs/dataStructure/List/ArrayList.c || cmake_object_order_depends_target_dataStructure
+  DEP_FILE = libs\dataStructure\CMakeFiles\dataStructure.dir\List\ArrayList.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = libs\dataStructure\CMakeFiles\dataStructure.dir
+  OBJECT_FILE_DIR = libs\dataStructure\CMakeFiles\dataStructure.dir\List
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target dataStructure
@@ -158,7 +164,7 @@ build libs/dataStructure/CMakeFiles/dataStructure.dir/Hash/HashTable.c.obj: C_CO
 #############################################
 # Link the static library libs\dataStructure\libdataStructure.a
 
-build libs/dataStructure/libdataStructure.a: C_STATIC_LIBRARY_LINKER__dataStructure_Debug libs/dataStructure/CMakeFiles/dataStructure.dir/Hash/HashTable.c.obj
+build libs/dataStructure/libdataStructure.a: C_STATIC_LIBRARY_LINKER__dataStructure_Debug libs/dataStructure/CMakeFiles/dataStructure.dir/Hash/HashTable.c.obj libs/dataStructure/CMakeFiles/dataStructure.dir/List/ArrayList.c.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = libs\dataStructure\CMakeFiles\dataStructure.dir
   POST_BUILD = cd .

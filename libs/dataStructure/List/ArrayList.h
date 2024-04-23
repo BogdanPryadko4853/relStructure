@@ -1,0 +1,8 @@
+//
+// Created by Bogdan on 22.04.2024.
+//
+
+#ifndef RELISSTRUCTURE_ARRAYLIST_H
+#define RELISSTRUCTURE_ARRAYLIST_H
+
+#endif //RELISSTRUCTURE_ARRAYLIST_H

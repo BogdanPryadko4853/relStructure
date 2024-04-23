@@ -48,5 +48,14 @@ int* getKeys(HashTable **table);
 //получение значений таблицы
 int* getValues(HashTable **table) ;
 
+void clearTable(HashTable **table);
+
+int getMinValue(HashTable **table);
+
+int getMaxValue(HashTable **table);
+
+int getAverageValue(HashTable **table);
+
+int getModelValue(HashTable **table);
 
 #endif //RELISSTRUCTURE_HASHTABLE_H
